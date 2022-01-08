@@ -1,29 +1,47 @@
 #include<iostream>
 using namespace std;
-
-void bubblesort(int arr[],int n)
-{
-	if(n==1) return; 
-	for(int i=0;i<n-1;i++)
-	{
-	if(arr[i]>arr[i+1])
-	{
-		swap(arr[i],arr[i+1]);
-	}
-	}
-	
-	  bubblesort(arr,n-1);
-}
 int main()
 {
-	int arr[11]={90,-8,105,0,1,20,0,1,-105,5,6};
-	int n=sizeof(arr)/sizeof(arr[0]);
-	int index=0;
-	bubblesort(arr,n);
+	int n,temp;
+	cout<<"Enter the array size"<<endl;
+	cin>>n;
+	int a[n];
+	cout<<"Enter the Array element"<<endl;
 	for(int i=0;i<n;i++)
 	{
-		cout<<arr[i]<<"\t";
+		cin>>a[i];
 	}
 	
+	
+	cout<<"Array Elements:"<<endl;
+	for(int i=0;i<n;i++)
+	{
+		cout<<a[i]<<"\t";
+	}
+	
+	
+	for(int i=0;i<n;i++)
+	{
+		int flag=0;
+		for(int j=0;j<(n-1)-i;j++)
+		{
+			if(a[j]>a[j+1])
+			{
+				temp=a[j];
+				a[j]=a[j+1];
+				a[j+1]=temp;
+				flag=1;
+			}
+			
+		}
+		if(flag==0) break;
+	}
+	
+	
+	cout<<"\nSorted Elements:"<<endl;
+	for(int i=0;i<n;i++)
+	{
+		cout<<a[i]<<"\t";
+	}
 	return 0;
 }
