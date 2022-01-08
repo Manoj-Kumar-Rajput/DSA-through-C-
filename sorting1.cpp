@@ -24,6 +24,8 @@ int main()
 	{
 		cout<<arr[i]<<"\t";
 	}
+	//insertionsort(arr,n,index);
+	//selectionsort(arr,n,index);
 	
 	return 0;
 }
